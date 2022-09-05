@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   end
 
   def index
+    @lists = List.all
   end
 
   def show
@@ -19,8 +20,8 @@ class ListsController < ApplicationController
   end
 
   private
-
+# ストロングパラメータ
   def list_params
-    params.require(:list).permit(:title, :body)
+    params.require(:list).permit(:title,:body)
   end
 end
