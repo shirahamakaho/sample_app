@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   def new
+    # 送られてきたデータを入れる箱的なやつ
     @list = List.new
   end
 
@@ -37,7 +38,7 @@ class ListsController < ApplicationController
   end
 
   private
-# ストロングパラメータ
+# ストロングパラメータ paramsはlistモデルのtitle,body,imageカラムを扱えるよ？
   def list_params
     params.require(:list).permit(:title,:body,:image)
   end
